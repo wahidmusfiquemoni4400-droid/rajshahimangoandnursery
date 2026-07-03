@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>রাজশাহী ম্যাঙ্গো অ্যান্ড নার্সারি</title>
+    <title>ম্যাঙ্গো অ্যান্ড নার্সারি পোর্টফোলিও</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&display=swap');
         :root {
@@ -28,6 +28,7 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 90px;
         }
 
         body {
@@ -63,6 +64,7 @@
             align-items: center;
             transition: var(--transition);
         }
+
 
         .logo-img {
             height: 75px;
@@ -247,15 +249,19 @@
         }
 
         .item-img {
-            width: 100%;
-            height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.25rem;
-        }
+    width: 100%;
+    height: 220px;
+    background-size: cover;          /* ছবিটি পুরো জায়গা জুড়ে বসবে */
+    background-position: center;     /* ছবি মাঝখানে থাকবে */
+    display: flex;
+    align-items: flex-end;           /* টেক্সট নিচে নামিয়ে আনার জন্য */
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* ছবির উপর টেক্সট পড়ার সুবিধার্থে শ্যাডো */
+}
 
         .item-info {
             padding: 1.8rem;
@@ -443,16 +449,57 @@
             transition: var(--transition);
         }
 
-        footer {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 2.5rem 1rem;
-        }
+        .footer {
+    background: #fff; /* আপনার থিমের সাথে মিল রেখে গাঢ় সবুজ */
+    color: #000000;
+    padding: 40px 20px;
+}
 
-        /* ==========================================================
-           📱 রেসপন্সিভ মিডিয়া কোয়েরি
-           ========================================================== */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffcc00; /* হলুদ রঙের একটি বর্ডার */
+    display: inline-block;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: #000000;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ffcc00;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+}
+
+
+
         @media (max-width: 768px) {
             .navbar {
                 padding: 0 1.5rem;
@@ -517,6 +564,18 @@
                 padding: 3.5rem 1rem;
             }
 
+            .filter-btn {
+        padding: 6px 12px;
+        font-size: 12px; /* মোবাইল স্ক্রিনে বাটন টেক্সট একটু ছোট করে দেওয়া */
+    }
+
+             .section-title {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 2.5rem;
+        }
+
             .whatsapp-container {
                 padding: 2rem 1rem;
             }
@@ -577,13 +636,14 @@
             <button class="filter-btn active" onclick="filterItems('all')">সব চারা</button>
             <button class="filter-btn" onclick="filterItems('mango')">আমের জাতসমূহ</button>
             <button class="filter-btn" onclick="filterItems('plant')">শোভাবর্ধনকারী গাছ</button>
+            <button class="filter-btn" onclick="filterItems('anar')">আনার</button>
         </div>
 
         <div class="gallery-grid" id="gallery">
             
             <!-- 🔗 লিংক ১: আম্রপালি (href="details-amrapali.html" পরিবর্তনযোগ্য) -->
             <a href="details-amrapali.html" class="gallery-item" data-category="mango">
-                <div class="item-img" style="background: #e29578;">আম্রপালি আমের চারা</div>
+                <div class="item-img" style="background-image: url(i.jpg);"></div>
                 <div class="item-info">
                     <span class="item-tag">আমের চারা</span>
                     <h3 class="item-title">আম্রপালি হাইব্রিড কলম</h3>
@@ -593,7 +653,7 @@
 
             <!-- 🔗 লিংক ২: হাড়িভাঙ্গা (href="details-harivanga.html" পরিবর্তনযোগ্য) -->
             <a href="details-harivanga.html" class="gallery-item" data-category="mango">
-                <div class="item-img" style="background: #ffb703;">হাড়িভাঙ্গা আমের চারা</div>
+                <div class="item-img" style="background-image: url(i.jpg);"></div>
                 <div class="item-info">
                     <span class="item-tag">আমের চারা</span>
                     <h3 class="item-title">হাড়িভাঙ্গা প্রিমিয়াম</h3>
@@ -603,7 +663,7 @@
 
             <!-- 🔗 লিংক ৩: অ্যারিকা পাম (href="details-areca-palm.html" পরিবর্তনযোগ্য) -->
             <a href="details-areca-palm.html" class="gallery-item" data-category="plant">
-                <div class="item-img" style="background: #2a9d8f;">অ্যারিকা পাম</div>
+                <div class="item-img" style="background-image: url(i.jpg);"></div>
                 <div class="item-info">
                     <span class="item-tag">ইনডোর প্ল্যান্ট</span>
                     <h3 class="item-title">অ্যারিকা পাম (Areca Palm)</h3>
@@ -613,7 +673,25 @@
 
             <!-- 🔗 লিংক ৪: অ্যাডেনিয়াম বনসাই (href="details-bonsai.html" পরিবর্তনযোগ্য) -->
             <a href="details-bonsai.html" class="gallery-item" data-category="plant">
-                <div class="item-img" style="background: #457b9d;">অ্যাডেনিয়াম বনসাই</div>
+                <div class="item-img" style="background-image: url(i.jpg);"></div>
+                <div class="item-info">
+                    <span class="item-tag">বনসাই</span>
+                    <h3 class="item-title">THAI অ্যাডেনিয়াম ডেজার্ট রোজ</h3>
+                    <p>বীজ থেকে তৈরি আকর্ষণীয় কডেক্স এবং উজ্জ্বল গোলাপি ফুলসহ একটি আকর্ষণীয় বনসাই প্ল্যান্ট।</p>
+                </div>
+            </a>
+
+            <a href="details-bonsai.html" class="gallery-item" data-category="anar">
+                <div class="item-img" style="background-image: url(i.jpg);"></div>
+                <div class="item-info">
+                    <span class="item-tag">বনসাই</span>
+                    <h3 class="item-title">THAI অ্যাডেনিয়াম ডেজার্ট রোজ</h3>
+                    <p>বীজ থেকে তৈরি আকর্ষণীয় কডেক্স এবং উজ্জ্বল গোলাপি ফুলসহ একটি আকর্ষণীয় বনসাই প্ল্যান্ট।</p>
+                </div>
+            </a>
+
+            <a href="details-bonsai.html" class="gallery-item" data-category="anar">
+                <div class="item-img" style="background-image: url(i.jpg);"></div>
                 <div class="item-info">
                     <span class="item-tag">বনসাই</span>
                     <h3 class="item-title">THAI অ্যাডেনিয়াম ডেজার্ট রোজ</h3>
@@ -661,10 +739,36 @@
         </div>
     </section>
 
-    <!-- ফুটার -->
-    <footer>
-        <p>&copy; ২০২৬ ম্যাঙ্গো অ্যান্ড নার্সারি সার্ভিস। সর্বস্বত্ব সংরক্ষিত।</p>
-    </footer>
+   <footer class="footer">
+    <div class="footer-container">
+        <!-- ১. লোগো ও বর্ণনা -->
+        <div class="footer-section">
+            <img src="1.png" alt="Logo" style="width: 180px;">
+            <p>আপনার বাগানের বিশ্বস্ত সঙ্গী। আমরা সেরা মানের আমের চারা এবং ইনডোর প্ল্যান্ট সরবরাহ করি।</p>
+        </div>
+
+        <!-- ২. কুইক লিংক -->
+        <div class="footer-section">
+            <h3>কুইক লিংকস</h3>
+            <ul>
+                <li><a href="#">হোম</a></li>
+                <li><a href="#">আমাদের কালেকশন</a></li>
+                <li><a href="#">খরচ হিসাবকারী</a></li>
+            </ul>
+        </div>
+
+        <!-- ৩. যোগাযোগ -->
+        <div class="footer-section">
+            <h3>যোগাযোগ</h3>
+            <p>ঠিকানা: ইউসুফপুর, রাজশাহী</p>
+            <p>ফোন: +৮৮০ ১৭১২-XXXXXX</p>
+            <p>ইমেইল: info@rajshahinursery.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; ২০২৬ ম্যাঙ্গো অ্যান্ড নার্সারি সার্ভিস। সর্বস্বত্ব সংরক্ষিত।
+    </div>
+</footer>
 
     <script>
         // --- রেসপন্সিভ সাইডবার লজিক ---
